@@ -41,22 +41,22 @@ $a[]="Zoo";
 // The query parameter q will be set to the string value
 // the user typed. We will search our array for strings
 // matching q
-$q=$_GET["q"];
+$q = $_GET["q"];
 
 
 // Lookup all hints from array if length of q is greater than zero
 if (strlen($q) > 0) {
-   $hint="";
-   for($i=0; $i<count($a); $i++) {
-      if (strtolower($q) == strtolower(substr($a[$i],0,strlen($q)))) {
-         if ($hint == "") {
-           $hint = $a[$i];
-       }
-       else {
-           $hint = $hint." , ".$a[$i];
-       }
-   }
-}
+    $hint = "";
+    for($i = 0; $i < count($a); $i++) {
+        if (strtolower($q) == strtolower(substr($a[$i],0,strlen($q)))) {
+            if ($hint == "") {
+                $hint = $a[$i];
+            }
+            else {
+                $hint .= " , " . $a[$i];
+            }
+        }
+    }
 }
 
 
